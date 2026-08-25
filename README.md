@@ -1,4 +1,5 @@
 # My Computer Dashboard
+![phone2pc](banner.png)
 
 A Windows background application that exposes your PC's status (CPU, RAM,
 GPU, uptime) to your phone over the local network, controlled from a small
