@@ -8,12 +8,6 @@
 ![Status](https://img.shields.io/badge/status-active-success)
 
 
->>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
-A Windows background application that exposes your PC's status (CPU, RAM,
-GPU, uptime) to your phone over the local network, controlled from a small
-native GUI and a system-tray icon. The app is designed to run continuously
-in the background — the server auto-starts, and the GUI window is just a
-viewer/configuration panel you can close without stopping anything.
 
 ## Architecture
 
