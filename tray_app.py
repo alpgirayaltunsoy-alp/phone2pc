@@ -27,7 +27,10 @@ class TrayApplication:
 
         ctx.server_state_changed.connect(self._on_server_state_changed)
         self._on_server_state_changed(ctx.server_state.value)
+<<<<<<< HEAD
         ctx.phone_message_received.connect(self._on_phone_message)
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
 
         self.tray_icon.show()
 
@@ -123,6 +126,7 @@ class TrayApplication:
         self.tray_icon.setIcon(make_tray_icon(state))
         self.tray_icon.setToolTip(f"My Computer Dashboard - {state.capitalize()}")
 
+<<<<<<< HEAD
     def _on_phone_message(self, device_name: str, text: str) -> None:
         self.tray_icon.showMessage(
             f"Message from {device_name}",
@@ -131,6 +135,8 @@ class TrayApplication:
             6000,
         )
 
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
     def exit_app(self) -> None:
         ctx.stop_server()
         self.tray_icon.hide()

@@ -22,7 +22,10 @@ _ring: dict[str, collections.deque] = {
     "auth": collections.deque(maxlen=MAX_RING_ENTRIES),
     "error": collections.deque(maxlen=MAX_RING_ENTRIES),
     "remote": collections.deque(maxlen=MAX_RING_ENTRIES),
+<<<<<<< HEAD
     "message": collections.deque(maxlen=MAX_RING_ENTRIES),
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
 }
 
 
@@ -71,7 +74,10 @@ server_logger = _make_logger("mcd.server", "server")
 auth_logger = _make_logger("mcd.auth", "auth")
 error_logger = _make_logger("mcd.error", "error")
 remote_logger = _make_logger("mcd.remote", "remote")
+<<<<<<< HEAD
 message_logger = _make_logger("mcd.message", "message")
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
 
 
 def now_iso() -> str:

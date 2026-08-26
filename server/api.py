@@ -14,11 +14,19 @@ import subprocess
 import time
 from pathlib import Path
 
+<<<<<<< HEAD
 from fastapi import FastAPI, Header, HTTPException, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 
 from core.config import config
 from core.logging_setup import message_logger, remote_logger, server_logger
+=======
+from fastapi import FastAPI, Header, HTTPException, WebSocket, WebSocketDisconnect
+from fastapi.responses import HTMLResponse, JSONResponse
+
+from core.config import config
+from core.logging_setup import remote_logger, server_logger
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
 from core.system_stats import get_local_ip, get_stats, get_uptime_seconds
 from server import pairing
 from server.websocket_manager import manager
@@ -186,6 +194,7 @@ def _resolve_allowed_path(raw_path: str, must_exist: bool = True) -> str:
     return target
 
 
+<<<<<<< HEAD
 MAX_UPLOAD_BYTES = 200 * 1024 * 1024  # 200 MB per file
 
 
@@ -243,6 +252,8 @@ async def api_files_upload(
     return {"saved_as": str(dest), "bytes": written}
 
 
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
 @app.get("/api/applications")
 def api_applications(authorization: str | None = Header(default=None)):
     _require_device(authorization)
@@ -308,6 +319,7 @@ def api_power_action(action: str, authorization: str | None = Header(default=Non
 
 
 # ---------------------------------------------------------------------------
+<<<<<<< HEAD
 # Clipboard sync
 # ---------------------------------------------------------------------------
 
@@ -377,6 +389,8 @@ def api_send_message(payload: dict, authorization: str | None = Header(default=N
 
 
 # ---------------------------------------------------------------------------
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
 # Remote screen viewing + keyboard/mouse control
 #
 # Gated behind _require_remote_control: a valid device token is NOT enough
@@ -526,6 +540,7 @@ _DASHBOARD_HTML = """
       <h2>Files</h2>
       <div id="breadcrumb" class="label" style="margin-bottom:8px;"></div>
       <div id="fileList"></div>
+<<<<<<< HEAD
       <div class="btn-grid">
         <button class="secondary" onclick="promptNewFolder()">+ New Folder</button>
         <button class="secondary" onclick="document.getElementById('uploadInput').click()">Upload File</button>
@@ -554,6 +569,9 @@ _DASHBOARD_HTML = """
       <h2>Processes</h2>
       <div id="processList" style="max-height:260px; overflow-y:auto;"></div>
       <button class="secondary" onclick="loadProcesses()">Refresh</button>
+=======
+      <button class="secondary" onclick="promptNewFolder()">+ New Folder</button>
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
     </div>
 
     <div class="card">
@@ -656,13 +674,17 @@ _DASHBOARD_HTML = """
         row.innerHTML = `<span class="name">${e.is_dir ? '📁' : '📄'} ${e.name}</span>`;
         if (e.is_dir) {
           row.querySelector('.name').onclick = () => loadDir(data.path + '/' + e.name);
+<<<<<<< HEAD
         } else {
           row.querySelector('.name').onclick = () => downloadFile(data.path + '/' + e.name);
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
         }
         list.appendChild(row);
       });
     }
 
+<<<<<<< HEAD
     function downloadFile(path) {
       const url = '/api/files/download?path=' + encodeURIComponent(path) + '&t=' + encodeURIComponent(getToken());
       window.open(url, '_blank');
@@ -685,6 +707,8 @@ _DASHBOARD_HTML = """
       }
     }
 
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
     function renderBreadcrumb(path) {
       const root = allowedRoots.find(r => path === r || path.startsWith(r));
       const bc = document.getElementById('breadcrumb');
@@ -735,6 +759,7 @@ _DASHBOARD_HTML = """
       }
     }
 
+<<<<<<< HEAD
     // ---- Clipboard ----
     async function loadClipboard() {
       const res = await fetch('/api/clipboard', { headers: authHeaders() });
@@ -799,6 +824,8 @@ _DASHBOARD_HTML = """
       }
     }
 
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
     // ---- Remote screen + input control ----
     let screenSocket = null;
     let remoteActive = false;
@@ -878,8 +905,11 @@ _DASHBOARD_HTML = """
         document.getElementById('mainSections').style.display = 'block';
         connectSocket();
         loadAllowedRoots();
+<<<<<<< HEAD
         loadClipboard();
         loadProcesses();
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
       } else {
         document.getElementById('pairSection').style.display = 'block';
       }

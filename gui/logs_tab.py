@@ -12,7 +12,10 @@ class LogsTab(QWidget):
         ("Authentication", "auth"),
         ("Errors", "error"),
         ("Remote-Control Actions", "remote"),
+<<<<<<< HEAD
         ("Messages", "message"),
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
     ]
 
     def __init__(self):

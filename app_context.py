@@ -12,10 +12,13 @@ from server.runner import ServerState, runner
 
 class AppContext(QObject):
     server_state_changed = Signal(str)
+<<<<<<< HEAD
     # Emitted from the FastAPI server thread when a paired phone sends a
     # message; Qt automatically marshals this to a queued (thread-safe)
     # delivery to whatever is connected on the main/GUI thread.
     phone_message_received = Signal(str, str)  # device_name, text
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
 
     def __init__(self):
         super().__init__()
@@ -32,9 +35,12 @@ class AppContext(QObject):
     def restart_server(self) -> None:
         self.runner.restart()
 
+<<<<<<< HEAD
     def receive_phone_message(self, device_name: str, text: str) -> None:
         self.phone_message_received.emit(device_name, text)
 
+=======
+>>>>>>> de07db71b4e20767c70c1c464cbf3f5c8b29fb9a
     @property
     def server_state(self) -> ServerState:
         return self.runner.state
