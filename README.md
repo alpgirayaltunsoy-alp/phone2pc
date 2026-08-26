@@ -1,7 +1,5 @@
 # My Computer Dashboard
 
-<<<<<<< HEAD
-=======
 ![License](https://img.shields.io/badge/license-GPL--3.0-orangered)
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
